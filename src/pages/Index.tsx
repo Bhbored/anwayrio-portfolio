@@ -19,34 +19,46 @@ const Index = () => {
       
       <div className="relative z-10">
         <Header /> {/* Render the Header component here */}
-        <Hero
-          name={portfolioData.personal.name}
-          title={portfolioData.personal.title}
-          description={portfolioData.personal.description}
-          contact={portfolioData.contact}
-        />
-        
-        <Skills skills={portfolioData.skills} />
-        
-        <Projects 
-          projects={portfolioData.projects}
-          onProjectClick={setSelectedProject}
-        />
-        
+        <section id="home">
+          <Hero
+            name={portfolioData.personal.name}
+            title={portfolioData.personal.title}
+            description={portfolioData.personal.description}
+            contact={portfolioData.contact}
+          />
+        </section>
+
+        <section id="skills">
+          <Skills skills={portfolioData.skills} />
+        </section>
+
+        <section id="projects">
+          <Projects
+            projects={portfolioData.projects}
+            onProjectClick={setSelectedProject}
+          />
+        </section>
+
         <ProjectDetail
           projectId={selectedProject}
           projectDetails={portfolioData.projectDetails}
           onClose={() => setSelectedProject(null)}
         />
-        
-        <Experience experience={portfolioData.experience} />
-        
-        <Education education={portfolioData.education} />
-        
-        <Contact 
-          contact={portfolioData.contact}
-          languages={portfolioData.languages}
-        />
+
+        <section id="experience">
+          <Experience experience={portfolioData.experience} />
+        </section>
+
+        <section id="education">
+          <Education education={portfolioData.education} />
+        </section>
+
+        <section id="contact">
+          <Contact
+            contact={portfolioData.contact}
+            languages={portfolioData.languages}
+          />
+        </section>
       </div>
     </div>
   );
