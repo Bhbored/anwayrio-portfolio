@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Github, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar'; // Import Avatar components
+import { portfolioData } from '@/data/portfolio'; // Import portfolioData
 import heroBackground from '@/assets/hero-background.jpg';
 
 interface HeroProps {
@@ -46,7 +48,14 @@ export const Hero = ({ name, title, description, contact }: HeroProps) => {
       
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-6 py-20 text-center">
+        {/* Profile Picture */}
         <div className="mb-8 animate-fade-in">
+          <Avatar className="h-32 w-32 mx-auto mb-4 border-4 border-primary shadow-lg">
+            <AvatarImage src={portfolioData.personal.profileImage} alt={portfolioData.personal.name} />
+            <AvatarFallback className="text-5xl font-bold">
+              {portfolioData.personal.name.split(' ').map(n => n[0]).join('')}
+            </AvatarFallback>
+          </Avatar>
           <div className="inline-block mb-4">
             <span className="text-primary font-mono text-lg">
               $ whoami

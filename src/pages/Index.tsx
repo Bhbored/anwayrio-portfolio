@@ -8,6 +8,7 @@ import { Education } from '@/components/Education';
 import { Contact } from '@/components/Contact';
 import { ParticleBackground } from '@/components/ParticleBackground';
 import { portfolioData } from '@/data/portfolio';
+import Header from '@/components/Header'; // Import the Header component
 
 const Index = () => {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
@@ -17,6 +18,7 @@ const Index = () => {
       <ParticleBackground />
       
       <div className="relative z-10">
+        <Header /> {/* Render the Header component here */}
         <Hero
           name={portfolioData.personal.name}
           title={portfolioData.personal.title}

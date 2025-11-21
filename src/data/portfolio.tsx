@@ -54,7 +54,8 @@ export const portfolioData = {
       gradient: "from-teal-400 to-cyan-500",
       icon: `<svg class="w-16 h-16 mx-auto mb-4" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
-             </svg>`
+             </svg>`,
+      image: "/images/ecommerce-screenshot-1.jpg"
     },
     {
       id: 2,
@@ -65,7 +66,8 @@ export const portfolioData = {
       gradient: "from-green-400 to-teal-500",
       icon: `<svg class="w-16 h-16 mx-auto mb-4" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clip-rule="evenodd" />
-             </svg>`
+             </svg>`,
+      image: "/images/chat-screenshot-1.jpg"
     },
     {
       id: 3,
@@ -76,7 +78,8 @@ export const portfolioData = {
       gradient: "from-blue-400 to-indigo-500",
       icon: `<svg class="w-16 h-16 mx-auto mb-4" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-             </svg>`
+             </svg>`,
+      image: null
     }
   ],
 
@@ -115,7 +118,7 @@ export const portfolioData = {
       title: 'E-Commerce REST API',
       tech: ['Node.js', 'Express', 'MongoDB'],
       description: 'Full-featured e-commerce backend API with comprehensive user authentication, product management, order processing, and payment integration. Built with modern JavaScript technologies and designed for high scalability and performance.',
-      image: 'from-teal-400 to-cyan-500',
+      images: ["/images/ecommerce-screenshot-1.jpg", "/images/ecommerce-screenshot-2.jpg"],
       features: [
         {
           title: 'Secure Authentication',
@@ -143,7 +146,7 @@ export const portfolioData = {
       title: 'Real-time Chat System',
       tech: ['Socket.io', 'WebSocket', 'Redis'],
       description: 'Modern real-time chat application built with WebSocket technology for instant messaging. Features user authentication, message encryption, file sharing, and group chat functionality with a clean, responsive interface.',
-      image: 'from-green-400 to-teal-500',
+      images: ["/images/chat-screenshot-1.jpg", "/images/chat-screenshot-2.jpg"],
       features: [
         {
           title: 'Real-time Messaging',
@@ -171,7 +174,7 @@ export const portfolioData = {
       title: 'Microservices Architecture',
       tech: ['Docker', 'Kubernetes', 'gRPC'],
       description: 'Scalable microservices architecture built for enterprise applications. Features service mesh implementation, API gateway, distributed caching, and comprehensive monitoring for high availability and performance.',
-      image: 'from-blue-400 to-indigo-500',
+      images: ["/images/microservices-screenshot-1.jpg", "/images/microservices-screenshot-2.jpg"],
       features: [
         {
           title: 'Service Mesh',
@@ -245,6 +248,7 @@ export const portfolioData = {
   personal: {
     name: "Anwar El Jundi",
     title: "Backend Developer & API Specialist",
-    description: "Versatile Backend Engineer with experience in web and mobile application development. Proficient in backend technologies including PHP/Laravel and .NET C#, with strong knowledge of database management and API development. Committed to delivering clean, efficient code and responsive user experiences."
+    description: "Versatile Backend Engineer with experience in web and mobile application development. Proficient in backend technologies including PHP/Laravel and .NET C#, with strong knowledge of database management and API development. Committed to delivering clean, efficient code and responsive user experiences.",
+    profileImage: "/images/anwaryoo.jpg"
   }
 };

@@ -3,14 +3,6 @@ import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
 
-// Import screenshots
-import ecommerceShot1 from '@/assets/ecommerce-screenshot-1.jpg';
-import ecommerceShot2 from '@/assets/ecommerce-screenshot-2.jpg';
-import chatShot1 from '@/assets/chat-screenshot-1.jpg';
-import chatShot2 from '@/assets/chat-screenshot-2.jpg';
-import microservicesShot1 from '@/assets/microservices-screenshot-1.jpg';
-import microservicesShot2 from '@/assets/microservices-screenshot-2.jpg';
-
 interface Feature {
   title: string;
   icon: string;
@@ -21,7 +13,7 @@ interface ProjectDetailData {
   title: string;
   tech: string[];
   description: string;
-  image: string;
+  images: string[]; // Changed from 'image: string' to 'images: string[]'
   features: Feature[];
 }
 
@@ -30,13 +22,6 @@ interface ProjectDetailProps {
   projectDetails: Record<string, ProjectDetailData>;
   onClose: () => void;
 }
-
-// Map project IDs to screenshots
-const projectScreenshots: Record<string, string[]> = {
-  '1': [ecommerceShot1, ecommerceShot2],
-  '2': [chatShot1, chatShot2],
-  '3': [microservicesShot1, microservicesShot2]
-};
 
 export const ProjectDetail = ({ projectId, projectDetails, onClose }: ProjectDetailProps) => {
   const [currentScreenshot, setCurrentScreenshot] = useState(0);
@@ -47,7 +32,7 @@ export const ProjectDetail = ({ projectId, projectDetails, onClose }: ProjectDet
   const detail = projectDetails[projectId.toString()];
   if (!detail) return null;
 
-  const screenshots = projectScreenshots[projectId.toString()] || [];
+  const screenshots = detail.images || []; // Now directly using detail.images
 
   const nextScreenshot = () => {
     setCurrentScreenshot((prev) => (prev + 1) % screenshots.length);

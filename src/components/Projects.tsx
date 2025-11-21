@@ -10,6 +10,7 @@ interface Project {
   technologies: string[];
   gradient: string;
   icon: string;
+  image?: string | null; // Add optional image property
 }
 
 interface ProjectsProps {
@@ -109,14 +110,25 @@ export const Projects = ({ projects, onProjectClick }: ProjectsProps) => {
                   onClick={() => onProjectClick(project.id)}
                   className="h-full bg-card border border-border rounded-xl overflow-hidden hover:border-primary transition-all cursor-pointer group/card card-glow-hover"
                 >
-                  {/* Project Header with Gradient */}
-                  <div className={`bg-gradient-to-br ${project.gradient || generateColor(project.title)} p-8 relative overflow-hidden`}>
-                    <div className="absolute inset-0 bg-black/20" />
-                    <div 
-                      className="relative z-10 text-white"
-                      dangerouslySetInnerHTML={{ __html: project.icon }}
-                    />
-                  </div>
+                  {/* Project Header with Image or Gradient */}
+                  {project.image ? (
+                    <div className="relative h-48 overflow-hidden">
+                      <img 
+                        src={project.image} 
+                        alt={project.title} 
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-black/20" />
+                    </div>
+                  ) : (
+                    <div className={`bg-gradient-to-br ${project.gradient || generateColor(project.title)} p-8 relative overflow-hidden`}>
+                      <div className="absolute inset-0 bg-black/20" />
+                      <div 
+                        className="relative z-10 text-white"
+                        dangerouslySetInnerHTML={{ __html: project.icon }}
+                      />
+                    </div>
+                  )}
 
                   {/* Project Info */}
                   <div className="p-6">
@@ -154,3 +166,4 @@ export const Projects = ({ projects, onProjectClick }: ProjectsProps) => {
     </section>
   );
 };
+
