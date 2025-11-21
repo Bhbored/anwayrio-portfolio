@@ -1,3 +1,8 @@
+
+//kell she8lak bass bell portfolio.tsx
+//just add what u need like the old one anwaryoo
+//project use back and icon in case there's no image for the project 
+//as for the image between `` 7ett el icon li beddak yaha from https://iconsvg.xyz , always 7ett images in public/images/project1 ..2 ...3 aw esmu
 export const portfolioData = {
   skills: [
     {
